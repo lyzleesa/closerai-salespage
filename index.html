@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tukar Penolakan kepada Jualan &amp; CloserAI — Panduan &amp; Pembantu Closing WhatsApp</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="closerai-favicon.png">
+  <link rel="apple-touch-icon" href="closerai-favicon.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            emerald: {
+              850: '#064e3b',
+              950: '#022c22',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Realistic 3D E-Book Mockup Styling */
+    .book-scene {
+      perspective: 1200px;
+    }
+    .book-3d {
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateY(-14deg) rotateX(4deg);
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 
+        18px 22px 35px -10px rgba(2, 44, 34, 0.45),
+        4px 6px 12px rgba(0, 0, 0, 0.25);
+      border-radius: 4px 12px 12px 4px;
+    }
+    .book-scene:hover .book-3d {
+      transform: rotateY(-6deg) rotateX(2deg) translateY(-4px);
+    }
+    /* Book spine effect on the left edge */
+    .book-3d::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      bottom: 1px;
+      left: -14px;
+      width: 15px;
+      background: linear-gradient(90deg, #022c22 0%, #065f46 45%, #047857 85%, #022c22 100%);
+      transform-origin: right center;
+      transform: rotateY(-72deg);
+      border-radius: 3px 0 0 3px;
+    }
+    /* Glossy cover highlight */
+    .book-gloss {
+      background: linear-gradient(115deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.05) 35%, rgba(255,255,255,0) 60%);
+    }
+
+    /* Realistic Smartphone Device Mockup Styling */
+    .phone-frame {
+      position: relative;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border-radius: 38px;
+      padding: 11px;
+      box-shadow: 
+        0 25px 50px -12px rgba(2, 44, 34, 0.45),
+        0 0 0 2px #334155,
+        inset 0 0 0 2px #475569;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .phone-frame:hover {
+      transform: translateY(-6px);
+    }
+    .phone-screen {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .phone-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 96px;
+      height: 18px;
+      background: #0f172a;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .phone-speaker {
+      width: 36px;
+      height: 4px;
+      background: #334155;
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-200 selection:text-emerald-950">
+
+  <!-- TOP STICKY ANNOUNCEMENT BAR -->
+  <div class="sticky top-0 z-40 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-emerald-950 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-2.5 text-center text-xs sm:text-sm font-extrabold tracking-wide flex flex-wrap items-center justify-center gap-2">
+      <span>🔥 HARGA PROMOSI PELANCARAN TERHAD — Jimat Sehingga RM39 untuk Pakej Kombo!</span>
+      <a href="#pakej-harga" class="underline decoration-2 underline-offset-2 hover:text-emerald-800 ml-1">Lihat Pakej &rarr;</a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-800 text-white pt-10 pb-16 sm:pt-14 sm:pb-24">
+    <!-- Subtle decorative radial glow -->
+    <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-emerald-500/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-amber-400/10 blur-3xl"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Top Mini Brand Bar -->
+      <div class="flex items-center justify-between mb-10 pb-4 border-b border-emerald-700/50">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-xl bg-white/95 border border-emerald-300/70 flex items-center justify-center shadow-md p-0.5 overflow-hidden">
+            <img src="closerai-favicon.png" alt="Ikon CloserAI" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <span class="font-display font-extrabold text-lg tracking-tight text-white">Closer<span class="text-amber-400">AI</span></span>
+            <span class="hidden sm:inline-block text-xs text-emerald-200 ml-2 border-l border-emerald-700 pl-2">Panduan &amp; Pembantu Closing WhatsApp</span>
+          </div>
+        </div>
+        <a href="#pakej-harga" class="text-xs sm:text-sm font-semibold bg-emerald-800/80 hover:bg-emerald-700 text-emerald-100 border border-emerald-600/60 px-3.5 py-2 rounded-xl transition">
+          Terus ke Harga
+        </a>
+      </div>
+
+      <!-- Main Hero Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <!-- Left Copy -->
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <div class="mb-6 flex justify-center lg:justify-start">
+            <img src="closerai-logo.png" alt="CloserAI — Pembantu Closing & Follow-Up WhatsApp" class="w-full max-w-[420px] h-auto object-contain drop-shadow-xl" loading="eager">
+          </div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-800/90 border border-emerald-600/60 text-amber-300 text-xs sm:text-sm font-semibold mb-5">
+            <span>🇲🇾 Khas Untuk Penjual Online, Dropshipper, Ejen &amp; Usahawan</span>
+          </div>
+
+          <h1 class="font-display text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold leading-[1.18] tracking-tight text-white mb-5">
+            Penat Layan PM Berjam-Jam, Tapi Pelanggan Asyik Kata <span class="text-amber-400">'Mahal'</span>, <span class="text-amber-400">'Fikir Dulu'</span> &amp; Terus <span class="underline decoration-amber-400/80 decoration-4 underline-offset-4">Blue Tick</span>?
+          </h1>
+
+          <p class="text-base sm:text-lg text-emerald-100/95 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+            Dapatkan panduan lengkap komunikasi WhatsApp &amp; pembantu pintar <strong>CloserAI</strong> untuk membantu anda menjawab bantahan dengan yakin, menyusun <em>follow-up</em> tanpa nampak terdesak, dan menjimatkan masa membalas mesej pelanggan.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#pakej-harga" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-emerald-950 font-display font-extrabold text-base sm:text-lg px-7 py-4 rounded-2xl shadow-xl shadow-emerald-950/50 transition transform hover:-translate-y-0.5">
+              <span>Pilih Pakej &amp; Bayar Terus 👇</span>
+            </a>
+            <a href="#isi-kandungan" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-800/60 hover:bg-emerald-800 text-white font-semibold text-sm sm:text-base px-6 py-4 rounded-2xl border border-emerald-600/70 transition">
+              <span>Lihat Apa Yang Anda Dapat</span>
+            </a>
+          </div>
+
+          <!-- Trust Micro-Points -->
+          <div class="mt-7 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm text-emerald-200">
+            <span class="flex items-center gap-1.5"><span class="text-amber-400 font-bold">✓</span> eBook Format PDF Sahaja</span>
+            <span class="flex items-center gap-1.5"><span class="text-amber-400 font-bold">✓</span> Tiada Caj Bulanan Aplikasi</span>
+            <span class="flex items-center gap-1.5"><span class="text-amber-400 font-bold">✓</span> Pembayaran Selamat Melalui BCL</span>
+          </div>
+        </div>
+
+        <!-- Right Visual: Combined 3D E-Book + Smartphone Mockup -->
+        <div class="lg:col-span-5 flex items-center justify-center pt-4 lg:pt-0">
+          <div class="relative flex items-end justify-center w-full max-w-md mx-auto">
+            
+            <!-- 3D E-Book Mockup -->
+            <div class="book-scene relative z-10 w-44 sm:w-52 -mr-6 sm:-mr-8 mb-3">
+              <!-- Floating Badge -->
+              <div class="absolute -top-4 -left-3 z-30 bg-amber-400 text-emerald-950 text-[10px] sm:text-xs font-extrabold px-2.5 py-1 rounded-lg shadow-lg border border-amber-200 whitespace-nowrap">
+                📘 E-BOOK FORMAT PDF SAHAJA
+              </div>
+              <div class="book-3d overflow-hidden bg-emerald-950">
+                <img 
+                  src="1000130951.png" 
+                  alt="Kulit E-Book Tukar Penolakan kepada Jualan" 
+                  onerror="this.onerror=null; this.src='https://placehold.co/420x590/064e3b/fbbf24?text=Tukar+Penolakan+kepada+Jualan';"
+                  class="w-full h-auto block object-cover"
+                >
+                <div class="book-gloss absolute inset-0 pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Realistic Smartphone Mockup -->
+            <div class="relative z-20 w-44 sm:w-52">
+              <!-- Floating Badge -->
+              <div class="absolute -top-4 -right-2 z-30 bg-emerald-500 text-white text-[10px] sm:text-xs font-extrabold px-2.5 py-1 rounded-lg shadow-lg border border-emerald-300 whitespace-nowrap">
+                📱 APLIKASI WEB CLOSERAI
+              </div>
+              <div class="phone-frame">
+                <div class="phone-notch">
+                  <div class="phone-speaker"></div>
+                </div>
+                <div class="phone-screen pt-4 bg-white">
+                  <img 
+                    src="1000131130.jpg" 
+                    alt="Paparan Aplikasi Web CloserAI" 
+                    onerror="this.onerror=null; this.src='https://placehold.co/360x640/ffffff/064e3b?text=CloserAI+App';"
+                    class="w-full h-auto block object-cover"
+                  >
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAIN POINTS SECTION -->
+  <section class="py-16 sm:py-20 bg-white border-b border-slate-200/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full mb-3">Realiti Penjual di WhatsApp</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+          Pernah Tak Anda Alami Situasi Macam Ni Setiap Hari?
+        </h2>
+        <p class="text-slate-600 mt-3 text-sm sm:text-base">
+          Iklan dah jalan, prospek dah masuk WhatsApp, tapi perbualan kerap terhenti di tengah jalan tanpa sebarang tempahan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Pain Card 1 -->
+        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="w-11 h-11 rounded-xl bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold mb-4">
+            ✓✓
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">
+            1. Baru Bagi Harga, Pelanggan Terus Hilang (Blue Tick)
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Bila pelanggan tanya <em>"Berapa harga?"</em>, anda terus bagi senarai harga penuh. Lepas tu pelanggan baca, senyap seribu bahasa, dan anda tak tahu macam mana nak sambung perbualan.
+          </p>
+        </div>
+
+        <!-- Pain Card 2 -->
+        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold mb-4">
+            💬
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">
+            2. Buntu Nak Balas "Mahal Sangat" atau "Shopee Lagi Murah"
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Bila pelanggan bandingkan harga atau minta diskaun, anda serba salah—kalau berdebat takut pelanggan lari, kalau terus beri potongan harga nanti margin untung pula makin nipis.
+          </p>
+        </div>
+
+        <!-- Pain Card 3 -->
+        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold mb-4">
+            🎙️
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">
+            3. Sibuk Nak Taip Jawapan Tersusun Untuk Soalan Panjang
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pelanggan hantar <em>voice note</em> panjang atau <em>screenshot</em> soalan bertubi-tubi semasa anda sedang menguruskan stok atau kerja lain, menyebabkan balasan jadi lambat atau terlalu ringkas.
+          </p>
+        </div>
+
+        <!-- Pain Card 4 -->
+        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl font-bold mb-4">
+            📅
+          </div>
+          <h3 class="font-display font-bold text-lg text-slate-900 mb-2">
+            4. Takut Nak Follow-Up Sebab Risau Nampak Terdesak
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Ramai pelanggan sebenarnya bukan menolak, cuma tunggu gaji atau berbincang dengan pasangan. Tapi sebab tak ada skrip susulan yang sopan, prospek dibiarkan sejuk begitu sahaja.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 1 SHOWCASE: E-BOOK -->
+  <section id="isi-kandungan" class="py-16 sm:py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- 3D E-Book Mockup Column -->
+        <div class="lg:col-span-5 flex flex-col items-center">
+          <div class="book-scene w-60 sm:w-72 relative">
+            <div class="absolute -top-3 -right-3 z-30 bg-emerald-900 text-amber-300 text-xs font-extrabold px-3 py-1.5 rounded-xl shadow-md border border-emerald-700">
+              Format PDF Sahaja
+            </div>
+            <div class="book-3d overflow-hidden bg-emerald-950">
+              <img 
+                src="1000130951.png" 
+                alt="E-Book Tukar Penolakan kepada Jualan" 
+                onerror="this.onerror=null; this.src='https://placehold.co/420x590/064e3b/fbbf24?text=Tukar+Penolakan+kepada+Jualan';"
+                class="w-full h-auto block"
+              >
+              <div class="book-gloss absolute inset-0 pointer-events-none"></div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 mt-5 text-center max-w-xs">
+            Disediakan dalam format <strong>PDF sahaja</strong> (bukan DOC/Word) supaya mudah dibaca dengan kemas di telefon pintar, tablet, dan komputer.
+          </p>
+        </div>
+
+        <!-- E-Book Chapters & Value Column -->
+        <div class="lg:col-span-7">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 border border-amber-200 px-3 py-1 rounded-full mb-3">
+            Komponen 1 — Panduan Strategi &amp; Skrip
+          </span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight mb-4">
+            E-Book: <span class="text-emerald-800">Tukar Penolakan kepada Jualan</span>
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+            Bukan sekadar himpunan ayat hafalan kaku. Panduan praktikal ini disusun khusus untuk pasaran Malaysia supaya anda faham psikologi di sebalik setiap keraguan pelanggan dan tahu cara membimbing mereka membuat keputusan dengan yakin.
+          </p>
+
+          <div class="space-y-4">
+            <!-- Chapter Item 1 -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm flex items-start gap-4">
+              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
+                01
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-base text-slate-900">Peta Aliran Closing WhatsApp</h3>
+                <p class="text-slate-600 text-sm mt-1">
+                  Panduan langkah demi langkah dari PM pertama masuk sehinggalah proses pembayaran—supaya anda tidak tersilap langkah memberi harga terlalu awal.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter Item 2 -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm flex items-start gap-4">
+              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
+                02
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-base text-slate-900">Bab 1 &amp; 2: Asas Closing &amp; 7 Bantahan Utama</h3>
+                <p class="text-slate-600 text-sm mt-1">
+                  Formula <strong>Dengar – Akui – Jelaskan – Bimbing</strong>, <strong>Bank 21 Frasa Closing</strong>, serta <strong>Kajian Kes Dialog Penuh (Before vs After)</strong> untuk isu harga, pesaing, dan bincang dengan pasangan.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter Item 3 -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm flex items-start gap-4">
+              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
+                03
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-base text-slate-900">Bab 3: Seni Follow-Up 7 Hari Tanpa Nampak Terdesak</h3>
+                <p class="text-slate-600 text-sm mt-1">
+                  Skrip susulan berperingkat untuk <strong>Hari 1, Hari 3, dan Hari 7</strong> bagi membuka semula perbualan dan memberi nilai tambahan tanpa memaksa atau mencipta stok palsu.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chapter Item 4 -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm flex items-start gap-4">
+              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5">
+                04
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-base text-slate-900">Bab 4 &amp; 5: Komunikasi WhatsApp &amp; Jualan Berulang</h3>
+                <p class="text-slate-600 text-sm mt-1">
+                  Teknik susunan buih mesej, etika <em>voice note</em>, skrip meminta testimoni sah, sistem rekod pelanggan, dan <strong>Checklist Harian WhatsApp Closer</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT 2 SHOWCASE: CLOSERAI WEB APP -->
+  <section class="py-16 sm:py-20 bg-white border-t border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- App Features Column -->
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full mb-3">
+            Komponen 2 — Pembantu Pantas Harian
+          </span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight mb-4">
+            Aplikasi Web <span class="text-emerald-700">CloserAI</span>: Pembantu Closing &amp; Follow-Up WhatsApp
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+            Bila anda sedang sibuk melayan banyak mesej serentak, anda tak sempat nak ubah suai skrip secara manual satu per satu. <strong>CloserAI</strong> membantu mengolah cadangan balasan yang selari dengan maklumat sebenar produk anda dalam beberapa saat.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <!-- Feature 1 -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-4">
+              <div class="text-emerald-700 font-bold text-sm mb-1 flex items-center gap-2">
+                <span>📦</span> Profil Multi-Produk &amp; Fail
+              </div>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Simpan maklumat produk, gambar poster promo, dan risalah PDF supaya cadangan jawapan merujuk fakta produk anda sendiri.
+              </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-4">
+              <div class="text-emerald-700 font-bold text-sm mb-1 flex items-center gap-2">
+                <span>📸</span> Analisis Screenshot &amp; Voice Note
+              </div>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Tampal teks mesej, muat naik <em>screenshot</em> chat WhatsApp, atau muat naik/rakam <em>voice note</em> pelanggan untuk dianalisis terus.
+              </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-4">
+              <div class="text-emerald-700 font-bold text-sm mb-1 flex items-center gap-2">
+                <span>💬</span> Mod Pecah Buih &amp; Terus ke WhatsApp
+              </div>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Jawapan dipecahkan kepada buih mesej pendek yang semula jadi dengan butang 1-klik terus buka perbualan WhatsApp (<code>wa.me</code>).
+              </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-4">
+              <div class="text-emerald-700 font-bold text-sm mb-1 flex items-center gap-2">
+                <span>📅</span> Penjana Jadual Follow-Up
+              </div>
+              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Hasilkan terus 3 peringkat skrip susulan (Hari 1, Hari 3 &amp; Hari 7) yang disesuaikan dengan konteks terakhir perbualan anda.
+              </p>
+            </div>
+          </div>
+
+          <!-- Honest Transparency Note (BYOK) -->
+          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5">
+            <span class="text-xl shrink-0">🔑</span>
+            <div>
+              <h4 class="font-display font-bold text-sm text-amber-950">Nota Ketelusan (Sistem API Key Sendiri / BYOK)</h4>
+              <p class="text-xs sm:text-sm text-amber-900/90 mt-1 leading-relaxed">
+                Aplikasi CloserAI beroperasi menggunakan <strong>Gemini API Key anda sendiri</strong> (Google AI Studio menyediakan kuota percuma untuk kegunaan peribadi). Ini bermakna <strong>tiada caj langganan bulanan</strong> daripada pihak kami, dan kunci API anda disimpan secara selamat di dalam pelayar peranti anda sahaja. Panduan langkah demi langkah turut disertakan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smartphone Mockup Column -->
+        <div class="lg:col-span-5 order-1 lg:order-2 flex flex-col items-center">
+          <div class="w-64 sm:w-72 relative">
+            <div class="absolute -top-3 -left-3 z-30 bg-emerald-600 text-white text-xs font-extrabold px-3 py-1.5 rounded-xl shadow-md">
+              Akses Terus dari Telefon
+            </div>
+            <div class="phone-frame">
+              <div class="phone-notch">
+                <div class="phone-speaker"></div>
+              </div>
+              <div class="phone-screen pt-4 bg-white">
+                <img 
+                  src="1000131130.jpg" 
+                  alt="Antara Muka Aplikasi CloserAI" 
+                  onerror="this.onerror=null; this.src='https://placehold.co/360x640/ffffff/064e3b?text=CloserAI+App';"
+                  class="w-full h-auto block"
+                >
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 mt-5 text-center max-w-xs">
+            Paparan sebenar aplikasi web CloserAI — ringkas, kemas, dan mudah digunakan sambil membalas mesej pelanggan.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-TIER PRICING & BUNDLE SECTION -->
+  <section id="pakej-harga" class="py-16 sm:py-24 bg-gradient-to-b from-emerald-950 to-emerald-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="inline-block text-xs font-extrabold uppercase tracking-wider text-emerald-950 bg-amber-400 px-3.5 py-1 rounded-full mb-3">
+          Harga Promosi Pelancaran
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+          Pilih Pakej Yang Sesuai Dengan Keperluan Bisnes Anda
+        </h2>
+        <p class="text-emerald-100/90 mt-3 text-sm sm:text-base">
+          Sekali bayar sahaja. Pilih sama ada anda mahukan panduan e-book, aplikasi web CloserAI, atau gabungan kedua-duanya dengan penjimatan maksimum.
+        </p>
+      </div>
+
+      <!-- Pricing Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- TIER 1: E-BOOK SAHAJA -->
+        <div class="bg-white text-slate-800 rounded-3xl p-7 sm:p-8 shadow-xl flex flex-col justify-between border border-emerald-800/20">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full">Pilihan 1</span>
+              <span class="text-xs font-semibold text-slate-500">Panduan Bacaan</span>
+            </div>
+            <h3 class="font-display text-xl font-extrabold text-slate-900 mb-2">E-Book Sahaja</h3>
+            <p class="text-slate-600 text-sm mb-6">
+              Sesuai untuk anda yang suka membaca strategi, memahami asas komunikasi, dan menyunting skrip secara manual.
+            </p>
+
+            <!-- Price -->
+            <div class="mb-6 pb-6 border-b border-slate-200">
+              <div class="text-sm text-slate-400 font-semibold">
+                Harga Asal: <span class="line-through text-red-500">RM35</span>
+              </div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="font-display text-4xl font-extrabold text-slate-900">RM15</span>
+                <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Jimat RM20</span>
+              </div>
+            </div>
+
+            <!-- Features -->
+            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span><strong>E-Book Lengkap</strong> (Format PDF sahaja)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Peta Aliran Closing WhatsApp (PM ke Bayaran)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Skrip 7 Bantahan Utama &amp; <strong>Bank 21 Frasa Closing</strong></span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Kajian Kes Dialog Penuh (<em>Before vs After</em>)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Jadual Follow-Up 7 Hari &amp; Checklist Harian Closer</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="openCheckoutModal('E-Book Sahaja', 15, 35)" class="w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-display font-bold text-sm sm:text-base transition shadow-md">
+            Dapatkan E-Book (RM15)
+          </button>
+        </div>
+
+        <!-- TIER 3: PAKEJ KOMBO (FEATURED CENTER ON DESKTOP) -->
+        <div class="relative bg-white text-slate-800 rounded-3xl p-7 sm:p-8 shadow-2xl flex flex-col justify-between border-4 border-amber-400 lg:-translate-y-4">
+          <!-- Top Floating Ribbon -->
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 text-xs font-extrabold px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap border border-amber-200">
+            🔥 PALING BERBALOI — TAMBAH RM1 JE!
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4 mt-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">Pilihan 3 • Pakej Kombo</span>
+              <span class="text-xs font-bold text-emerald-700">Lengkap</span>
+            </div>
+            <h3 class="font-display text-2xl font-extrabold text-slate-900 mb-2">E-Book + Aplikasi CloserAI</h3>
+            <p class="text-slate-600 text-sm mb-5">
+              Dapatkan panduan penuh berserta aplikasi web CloserAI dengan hanya menambah <strong>RM1</strong> daripada harga aplikasi!
+            </p>
+
+            <!-- Mini Bundle Visual Preview -->
+            <div class="bg-emerald-50/80 border border-emerald-200 rounded-2xl p-3 mb-5 flex items-center justify-center gap-3">
+              <img src="1000130951.png" alt="Mini Ebook" onerror="this.style.display='none'" class="w-12 h-16 object-cover rounded shadow">
+              <span class="font-extrabold text-emerald-700 text-lg">+</span>
+              <img src="1000131130.jpg" alt="Mini App" onerror="this.style.display='none'" class="w-10 h-16 object-cover rounded shadow border border-slate-300">
+              <div class="text-left text-xs text-emerald-950 font-semibold leading-snug">
+                Panduan Lengkap<br>+ Pembantu Pantas AI
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="mb-6 pb-6 border-b border-slate-200">
+              <div class="text-sm text-slate-400 font-semibold">
+                Harga Asal: <span class="line-through text-red-500">RM69</span>
+              </div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="font-display text-5xl font-extrabold text-emerald-800">RM30</span>
+                <span class="text-xs font-extrabold text-emerald-950 bg-amber-300 px-2.5 py-1 rounded-md">Jimat RM39!</span>
+              </div>
+            </div>
+
+            <!-- Features -->
+            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span><strong>Semua Kandungan E-Book Lengkap</strong> (Format PDF sahaja)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span><strong>Akses Penuh Aplikasi Web CloserAI</strong> (Sokongan Multi-Produk)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Analisis <em>Screenshot</em> Chat &amp; <em>Voice Note</em> Pelanggan</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Penjana Skrip Follow-Up Hari 1, 3 &amp; 7 + Butang Terus WhatsApp</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Panduan Integrasi E-Book &amp; Setup Gemini API Key (BYOK)</span>
+              </li>
+            </ul>
+          </div>
+
+          <button onclick="openCheckoutModal('Pakej Kombo (E-Book + Aplikasi CloserAI)', 30, 69)" class="w-full py-4 px-5 rounded-2xl bg-gradient-to-r from-emerald-700 to-emerald-600 hover:from-emerald-600 hover:to-emerald-500 text-white font-display font-extrabold text-base transition shadow-lg shadow-emerald-900/25">
+            Ambil Pakej Kombo (RM30) 🚀
+          </button>
+        </div>
+
+        <!-- TIER 2: APLIKASI SAHAJA -->
+        <div class="bg-white text-slate-800 rounded-3xl p-7 sm:p-8 shadow-xl flex flex-col justify-between border border-emerald-800/20">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full">Pilihan 2</span>
+              <span class="text-xs font-semibold text-slate-500">Alat Bantu Web</span>
+            </div>
+            <h3 class="font-display text-xl font-extrabold text-slate-900 mb-2">Aplikasi CloserAI Sahaja</h3>
+            <p class="text-slate-600 text-sm mb-6">
+              Sesuai untuk anda yang mahu terus menggunakan alat bantu web untuk mengolah balasan dan susulan mengikut profil produk.
+            </p>
+
+            <!-- Price -->
+            <div class="mb-6 pb-6 border-b border-slate-200">
+              <div class="text-sm text-slate-400 font-semibold">
+                Harga Asal: <span class="line-through text-red-500">RM59</span>
+              </div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="font-display text-4xl font-extrabold text-slate-900">RM29</span>
+                <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Jimat RM30</span>
+              </div>
+            </div>
+
+            <!-- Features -->
+            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span><strong>Akses Penuh Aplikasi Web CloserAI</strong> (Mesra Telefon &amp; PC)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Simpan Profil Multi-Produk (Teks, Gambar &amp; Risalah PDF)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Analisis <em>Screenshot</em> Chat &amp; <em>Voice Note</em> Pelanggan</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Mod Pecah Buih Mesej &amp; Penjana Follow-Up Hari 1, 3 &amp; 7</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                <span>Panduan Setup Gemini API Key Sendiri (Tiada Caj Bulanan)</span>
+              </li>
+            </ul>
+          </div>
+
+          <button type="button" onclick="selectPackageAndScroll('Aplikasi CloserAI Sahaja', 29, 59)" class="w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-display font-bold text-sm sm:text-base transition shadow-md">
+            Pilih Aplikasi (RM29) &rarr;
+          </button>
+        </div>
+
+      </div>
+
+      <!-- DIRECT BCL PAYMENT CHECKOUT SECTION -->
+      <div id="borang-pembayaran" class="mt-16 bg-white text-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl border-2 border-emerald-400/50">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left: Interactive Package Switcher & Selected Summary -->
+          <div class="lg:col-span-5 space-y-5">
+            <div>
+              <span class="inline-block text-xs font-extrabold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full mb-2">
+                Pembayaran Terus Melalui BCL
+              </span>
+              <h3 class="font-display text-2xl font-extrabold text-slate-900 leading-tight">
+                Sahkan Pakej &amp; Lengkapkan Bayaran
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1.5">
+                Pilih pakej yang anda mahukan di bawah, kemudian lengkapkan pembayaran terus pada borang BCL di sebelah.
+              </p>
+            </div>
+
+            <!-- Interactive Package Pills -->
+            <div class="space-y-2.5" id="checkout-package-pills">
+              <button type="button" id="pill-ebook" onclick="setActivePackage('eBook PDF Sahaja', 15, 35, 'ebook')" class="w-full text-left p-3.5 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-emerald-500 transition flex items-center justify-between">
+                <div>
+                  <div class="font-display font-bold text-sm text-slate-900">eBook PDF Sahaja</div>
+                  <div class="text-xs text-slate-500">Format PDF sahaja • <span class="line-through text-red-500">RM35</span></div>
+                </div>
+                <span class="font-display font-extrabold text-lg text-slate-900">RM15</span>
+              </button>
+
+              <button type="button" id="pill-app" onclick="setActivePackage('Aplikasi CloserAI Sahaja', 29, 59, 'app')" class="w-full text-left p-3.5 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-emerald-500 transition flex items-center justify-between">
+                <div>
+                  <div class="font-display font-bold text-sm text-slate-900">Aplikasi CloserAI Sahaja</div>
+                  <div class="text-xs text-slate-500">Akses web + BYOK • <span class="line-through text-red-500">RM59</span></div>
+                </div>
+                <span class="font-display font-extrabold text-lg text-slate-900">RM29</span>
+              </button>
+
+              <button type="button" id="pill-kombo" onclick="setActivePackage('Kombo (eBook PDF + Aplikasi CloserAI)', 30, 69, 'kombo')" class="w-full text-left p-3.5 rounded-2xl border-2 border-emerald-600 bg-emerald-50/90 transition flex items-center justify-between shadow-sm">
+                <div>
+                  <div class="font-display font-extrabold text-sm text-emerald-950 flex items-center gap-1.5">
+                    <span>Kombo (eBook PDF + Aplikasi)</span>
+                    <span class="text-[10px] bg-amber-400 text-emerald-950 px-2 py-0.5 rounded-full font-extrabold">PALING JIMAT</span>
+                  </div>
+                  <div class="text-xs text-emerald-800">PDF + Aplikasi web • <span class="line-through text-red-500">RM69</span></div>
+                </div>
+                <span class="font-display font-extrabold text-xl text-emerald-800">RM30</span>
+              </button>
+            </div>
+
+            <!-- Active Selection Banner -->
+            <div class="bg-slate-900 text-white rounded-2xl p-4 flex items-center justify-between">
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-emerald-300 font-bold">Pakej Dipilih:</div>
+                <div id="selected-package-label" class="font-display font-bold text-sm sm:text-base mt-0.5">Kombo (eBook PDF + Aplikasi CloserAI)</div>
+              </div>
+              <div class="text-right">
+                <span id="selected-package-orig" class="text-xs text-slate-400 line-through block">RM69</span>
+                <span id="selected-package-promo" class="font-display text-2xl font-extrabold text-amber-400">RM30</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: BCL Embedded Payment Widget Container -->
+          <div class="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-6">
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
+              <span class="text-xs font-bold text-slate-700">Borang Pembayaran BCL</span>
+              <span class="text-xs font-semibold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">✓ Terus &amp; Selamat</span>
+            </div>
+
+            <!-- BCL Payment Form Embed -->
+            <div id="bcl-payment-form" data-url="https://mozacreatives.bcl.my/embed/form/whatsapp-assistant"></div>
+            <script src="https://bcl.my/js/bc-encrypted-payment-embed.js"></script>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="py-16 sm:py-20 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full mb-3">Soalan Lazim (FAQ)</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900">
+          Jawapan Jujur Sebelum Anda Membuat Pembelian
+        </h2>
+      </div>
+
+      <div class="space-y-4" id="faq-container">
+        <!-- FAQ 1 -->
+        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-slate-900 hover:bg-slate-50 transition">
+            <span>1. Apa beza eBook PDF dan Aplikasi CloserAI, serta adakah eBook ini dalam format DOC?</span>
+            <span id="faq-icon-1" class="text-emerald-700 text-xl font-bold transition-transform">+</span>
+          </button>
+          <div id="faq-body-1" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            eBook <strong>"Tukar Penolakan kepada Jualan"</strong> disediakan dalam format <strong>PDF sahaja</strong> (bukan format DOC/Word) dan menghimpunkan prinsip komunikasi, aliran perbualan, kajian kes, dan skrip rujukan. <strong>Aplikasi CloserAI</strong> pula ialah alat bantu web yang membolehkan anda menyimpan maklumat produk (teks, gambar, PDF), menganalisis <em>screenshot</em> atau <em>voice note</em> pelanggan, memecahkan buih mesej, dan menjana skrip <em>follow-up</em> Hari 1, 3 &amp; 7 berdasarkan konteks produk anda.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-slate-900 hover:bg-slate-50 transition">
+            <span>2. Adakah aplikasi ini memerlukan bayaran bulanan?</span>
+            <span id="faq-icon-2" class="text-emerald-700 text-xl font-bold transition-transform">+</span>
+          </button>
+          <div id="faq-body-2" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            <strong>Tiada bayaran bulanan</strong> kepada pihak kami — anda hanya membuat pembayaran sekali sahaja melalui borang BCL di halaman ini. Aplikasi ini menggunakan sistem <strong>BYOK (Bring Your Own API Key)</strong> di mana anda memasukkan kunci API Google Gemini anda sendiri (boleh diperoleh melalui Google AI Studio mengikut kuota percuma yang disediakan oleh Google). Kunci API anda disimpan secara setempat dalam pelayar peranti anda sahaja.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-slate-900 hover:bg-slate-50 transition">
+            <span>3. Boleh guna di telefon pintar ke?</span>
+            <span id="faq-icon-3" class="text-emerald-700 text-xl font-bold transition-transform">+</span>
+          </button>
+          <div id="faq-body-3" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            <strong>Ya, boleh.</strong> eBook format PDF boleh dibaca pada bila-bila masa di telefon pintar, tablet, atau komputer. Aplikasi web CloserAI juga direka dengan susun atur mesra telefon pintar (<em>mobile-first</em>) dan mempunyai butang terus hantar ke WhatsApp (<code>wa.me</code>) untuk memudahkan aliran kerja harian anda.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+          <button type="button" onclick="toggleFaq(4)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-bold text-slate-900 hover:bg-slate-50 transition">
+            <span>4. Adakah skrip dan aplikasi ini menjamin 100% pelanggan akan membeli?</span>
+            <span id="faq-icon-4" class="text-emerald-700 text-xl font-bold transition-transform">+</span>
+          </button>
+          <div id="faq-body-4" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            <strong>Tidak.</strong> Tiada skrip atau perisian yang boleh memaksa semua orang membeli. Keputusan pembelian tetap bergantung pada keperluan pelanggan, bajet, kesesuaian produk, dan tawaran sebenar perniagaan anda. Fungsi eBook PDF dan CloserAI adalah untuk membantu anda berkomunikasi dengan lebih jelas, mengelakkan respon defensif, menyusun <em>follow-up</em> secara berhemah, dan menjimatkan masa harian anda.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-3">
+      <div class="font-display font-bold text-white text-base">
+        Closer<span class="text-amber-400">AI</span> &amp; eBook Tukar Penolakan kepada Jualan (Format PDF)
+      </div>
+      <p class="text-xs max-w-2xl mx-auto leading-relaxed">
+        <strong>Penafian &amp; Etika Penggunaan:</strong> Bahan (eBook dalam format PDF sahaja) dan aplikasi ini disediakan sebagai panduan pendidikan serta alat bantu komunikasi jualan. Segala contoh harga, manfaat, promosi, dan testimoni hendaklah digantikan dengan maklumat sebenar perniagaan anda. Gunakan mesej pemasaran secara bertanggungjawab dan hormati privasi pelanggan.
+      </p>
+      <div class="pt-3 border-t border-slate-800/80 text-xs">
+        <span>&copy; 2026 Hak Cipta Terpelihara.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Accordion Toggle
+    function toggleFaq(id) {
+      const body = document.getElementById('faq-body-' + id);
+      const icon = document.getElementById('faq-icon-' + id);
+      const isHidden = body.classList.contains('hidden');
+      
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('faq-body-' + i).classList.add('hidden');
+        document.getElementById('faq-icon-' + i).textContent = '+';
+      }
+
+      if (isHidden) {
+        body.classList.remove('hidden');
+        icon.textContent = '−';
+      }
+    }
+
+    // Highlight selected package in the checkout summary panel
+    function setActivePackage(pkgName, promoPrice, origPrice, key) {
+      const pills = {
+        ebook: document.getElementById('pill-ebook'),
+        app: document.getElementById('pill-app'),
+        kombo: document.getElementById('pill-kombo')
+      };
+
+      Object.keys(pills).forEach((k) => {
+        const el = pills[k];
+        if (!el) return;
+        if (k === key) {
+          el.classList.remove('border-slate-200', 'bg-slate-50');
+          el.classList.add('border-emerald-600', 'bg-emerald-50/90', 'shadow-sm');
+        } else {
+          el.classList.remove('border-emerald-600', 'bg-emerald-50/90', 'shadow-sm');
+          el.classList.add('border-slate-200', 'bg-slate-50');
+        }
+      });
+
+      document.getElementById('selected-package-label').textContent = pkgName;
+      document.getElementById('selected-package-orig').textContent = 'RM' + origPrice;
+      document.getElementById('selected-package-promo').textContent = 'RM' + promoPrice;
+    }
+
+    // Select package from pricing card and smoothly scroll to BCL payment form
+    function selectPackageAndScroll(pkgName, promoPrice, origPrice) {
+      let key = 'kombo';
+      if (promoPrice === 15) key = 'ebook';
+      else if (promoPrice === 29) key = 'app';
+
+      setActivePackage(pkgName, promoPrice, origPrice, key);
+
+      const paymentSection = document.getElementById('borang-pembayaran');
+      if (paymentSection) {
+        paymentSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+</body>
+</html>
